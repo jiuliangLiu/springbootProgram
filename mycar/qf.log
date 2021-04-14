@@ -1,0 +1,1238 @@
+2020-03-12 10:48:30 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:745) DruidDataSource.java ERROR init datasource error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:734)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1058)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1054)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:104)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy116.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy54.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:84)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy55.findByUsername(Unknown Source)
+	at com.xd.service.impl.SysUserServiceImpl.findByUsername(SysUserServiceImpl.java:81)
+	at com.xd.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:35)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.xd.controller.UserController.login(UserController.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-03-12 10:48:30 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:776) DruidDataSource.java ERROR {dataSource-1} init error
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:734)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1058)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1054)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:104)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy116.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy54.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:84)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy55.findByUsername(Unknown Source)
+	at com.xd.service.impl.SysUserServiceImpl.findByUsername(SysUserServiceImpl.java:81)
+	at com.xd.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:35)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.xd.controller.UserController.login(UserController.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-03-12 10:48:30 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:785) DruidDataSource.java INFO {dataSource-1} inited
+2020-03-12 10:48:30 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:30 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:30 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:30 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:48:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:49:01 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:49:31 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:49:34 com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1089) DruidDataSource.java WARN not full timeout retry : 1
+2020-03-12 10:50:01 com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2083) DruidDataSource.java ERROR create connection error, url: jdbc:mysql://localhost:3306/qicheguanli?useSSL=true&serverTimezone=GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1454)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1516)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2080)
+2020-03-12 10:55:53 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:785) DruidDataSource.java INFO {dataSource-1} inited
+2020-03-12 10:55:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} enter cache
+2020-03-12 10:55:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} enter cache
+2020-03-12 10:55:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} enter cache
+2020-03-12 10:55:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} enter cache
+2020-03-12 10:56:31 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20004} enter cache
+2020-03-12 10:56:31 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20005} enter cache
+2020-03-12 10:56:35 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20006} enter cache
+2020-03-12 10:56:35 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20007} enter cache
+2020-03-12 10:56:35 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20008} enter cache
+2020-03-12 10:56:35 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 10:56:35 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 10:56:57 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 10:56:57 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 10:57:39 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20009} enter cache
+2020-03-12 10:57:39 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20010} enter cache
+2020-03-12 10:57:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20011} enter cache
+2020-03-12 10:57:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20012} enter cache
+2020-03-12 10:57:44 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20013} enter cache
+2020-03-12 10:57:44 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20014} enter cache
+2020-03-12 10:57:45 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20015} enter cache
+2020-03-12 10:57:45 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20016} enter cache
+2020-03-12 10:57:46 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20017} enter cache
+2020-03-12 10:57:46 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20018} enter cache
+2020-03-12 10:57:48 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20019} enter cache
+2020-03-12 10:57:48 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} exit cache
+2020-03-12 10:57:48 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20020} enter cache
+2020-03-12 10:57:49 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} exit cache
+2020-03-12 10:57:49 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20021} enter cache
+2020-03-12 10:57:49 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} exit cache
+2020-03-12 10:57:49 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20022} enter cache
+2020-03-12 10:57:50 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20006} exit cache
+2020-03-12 10:57:50 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20023} enter cache
+2020-03-12 10:57:50 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} exit cache
+2020-03-12 10:57:50 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20024} enter cache
+2020-03-12 10:57:53 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20004} exit cache
+2020-03-12 10:57:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20025} enter cache
+2020-03-12 10:57:53 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20005} exit cache
+2020-03-12 10:57:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20026} enter cache
+2020-03-12 10:57:55 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20007} exit cache
+2020-03-12 10:57:55 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20027} enter cache
+2020-03-12 10:57:55 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20008} exit cache
+2020-03-12 10:57:55 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20028} enter cache
+2020-03-12 10:57:58 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20009} exit cache
+2020-03-12 10:57:58 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20029} enter cache
+2020-03-12 10:57:58 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20010} exit cache
+2020-03-12 10:57:58 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20030} enter cache
+2020-03-12 10:58:00 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20011} exit cache
+2020-03-12 10:58:00 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20031} enter cache
+2020-03-12 10:58:08 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20012} exit cache
+2020-03-12 10:58:08 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20032} enter cache
+2020-03-12 10:58:08 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20013} exit cache
+2020-03-12 10:58:08 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20033} enter cache
+2020-03-12 10:58:08 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 10:58:08 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 10:58:41 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20014} exit cache
+2020-03-12 10:58:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20034} enter cache
+2020-03-12 10:58:41 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20015} exit cache
+2020-03-12 10:58:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20035} enter cache
+2020-03-12 10:58:41 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 10:58:41 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 10:58:53 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20016} exit cache
+2020-03-12 10:58:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20036} enter cache
+2020-03-12 10:58:53 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20017} exit cache
+2020-03-12 10:58:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20037} enter cache
+2020-03-12 10:58:55 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 10:58:55 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 10:58:57 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 10:58:57 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 10:59:26 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 10:59:26 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 11:11:48 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 11:11:48 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 11:16:17 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 11:16:17 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 11:16:37 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20018} exit cache
+2020-03-12 11:16:37 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20038} enter cache
+2020-03-12 11:16:37 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20019} exit cache
+2020-03-12 11:16:37 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20039} enter cache
+2020-03-12 11:16:37 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20020} exit cache
+2020-03-12 11:16:37 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20040} enter cache
+2020-03-12 11:28:40 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:785) DruidDataSource.java INFO {dataSource-1} inited
+2020-03-12 11:28:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} enter cache
+2020-03-12 11:28:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} enter cache
+2020-03-12 11:28:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} enter cache
+2020-03-12 11:28:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} enter cache
+2020-03-12 13:36:36 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:785) DruidDataSource.java INFO {dataSource-1} inited
+2020-03-12 13:36:36 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} enter cache
+2020-03-12 13:36:36 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} enter cache
+2020-03-12 13:36:36 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} enter cache
+2020-03-12 13:36:36 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} enter cache
+2020-03-12 13:44:18 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20004} enter cache
+2020-03-12 13:44:18 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20005} enter cache
+2020-03-12 13:44:20 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20006} enter cache
+2020-03-12 13:44:20 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20007} enter cache
+2020-03-12 13:44:20 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20008} enter cache
+2020-03-12 13:44:20 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 13:44:20 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 14:06:55 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20009} enter cache
+2020-03-12 14:06:55 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20010} enter cache
+2020-03-12 14:07:05 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20011} enter cache
+2020-03-12 14:07:05 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20012} enter cache
+2020-03-12 14:07:07 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20013} enter cache
+2020-03-12 14:07:07 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20014} enter cache
+2020-03-12 14:07:09 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20015} enter cache
+2020-03-12 14:07:50 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20016} enter cache
+2020-03-12 14:08:00 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20017} enter cache
+2020-03-12 14:08:13 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20018} enter cache
+2020-03-12 14:08:13 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20019} enter cache
+2020-03-12 14:08:19 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} exit cache
+2020-03-12 14:08:19 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20020} enter cache
+2020-03-12 14:08:19 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} exit cache
+2020-03-12 14:08:19 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20021} enter cache
+2020-03-12 14:08:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} exit cache
+2020-03-12 14:08:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20022} enter cache
+2020-03-12 14:08:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20004} exit cache
+2020-03-12 14:08:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20023} enter cache
+2020-03-12 14:08:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20005} exit cache
+2020-03-12 14:08:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20024} enter cache
+2020-03-12 14:08:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20006} exit cache
+2020-03-12 14:08:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20025} enter cache
+2020-03-12 14:08:23 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} exit cache
+2020-03-12 14:08:23 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20026} enter cache
+2020-03-12 14:08:23 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20007} exit cache
+2020-03-12 14:08:23 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20027} enter cache
+2020-03-12 14:08:23 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20008} exit cache
+2020-03-12 14:08:23 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20028} enter cache
+2020-03-12 14:08:23 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20013} exit cache
+2020-03-12 14:08:23 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20029} enter cache
+2020-03-12 14:12:09 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20014} exit cache
+2020-03-12 14:12:09 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20030} enter cache
+2020-03-12 14:12:09 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20015} exit cache
+2020-03-12 14:12:09 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20031} enter cache
+2020-03-12 14:12:10 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20011} exit cache
+2020-03-12 14:12:10 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20032} enter cache
+2020-03-12 14:12:10 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20012} exit cache
+2020-03-12 14:12:10 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20033} enter cache
+2020-03-12 14:12:35 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20016} exit cache
+2020-03-12 14:12:35 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20034} enter cache
+2020-03-12 14:12:35 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20017} exit cache
+2020-03-12 14:12:35 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20035} enter cache
+2020-03-12 14:13:06 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20022} exit cache
+2020-03-12 14:13:06 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20036} enter cache
+2020-03-12 14:13:06 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20023} exit cache
+2020-03-12 14:13:06 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20037} enter cache
+2020-03-12 14:13:27 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20018} exit cache
+2020-03-12 14:13:27 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20038} enter cache
+2020-03-12 14:13:52 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20019} exit cache
+2020-03-12 14:13:52 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20039} enter cache
+2020-03-12 15:03:15 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20020} exit cache
+2020-03-12 15:03:15 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20040} enter cache
+2020-03-12 15:03:15 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20021} exit cache
+2020-03-12 15:03:15 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20041} enter cache
+2020-03-12 15:03:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20024} exit cache
+2020-03-12 15:03:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20042} enter cache
+2020-03-12 15:03:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20025} exit cache
+2020-03-12 15:03:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20043} enter cache
+2020-03-12 15:03:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20009} exit cache
+2020-03-12 15:03:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20044} enter cache
+2020-03-12 15:03:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20010} exit cache
+2020-03-12 15:03:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20045} enter cache
+2020-03-12 15:03:21 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 15:03:21 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 15:57:26 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20039} exit cache
+2020-03-12 15:57:26 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20046} enter cache
+2020-03-12 15:57:26 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20038} exit cache
+2020-03-12 15:57:26 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20047} enter cache
+2020-03-12 15:57:26 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20028} exit cache
+2020-03-12 15:57:26 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20048} enter cache
+2020-03-12 16:07:48 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 16:07:48 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 16:08:33 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 16:08:33 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 16:25:56 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20029} exit cache
+2020-03-12 16:25:56 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20049} enter cache
+2020-03-12 16:27:41 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 16:27:41 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 16:30:14 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 16:30:14 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 16:30:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20026} exit cache
+2020-03-12 16:30:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20050} enter cache
+2020-03-12 16:30:21 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 16:30:21 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":10,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 16:30:24 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20027} exit cache
+2020-03-12 16:30:24 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20051} enter cache
+2020-03-12 16:30:28 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 16:30:28 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":10,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 16:36:05 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20036} exit cache
+2020-03-12 16:36:05 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20052} enter cache
+2020-03-12 16:36:05 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20037} exit cache
+2020-03-12 16:36:05 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20053} enter cache
+2020-03-12 16:38:32 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20034} exit cache
+2020-03-12 16:38:32 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20054} enter cache
+2020-03-12 16:39:35 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20035} exit cache
+2020-03-12 16:39:35 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20055} enter cache
+2020-03-12 16:39:42 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20046} exit cache
+2020-03-12 16:39:42 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20056} enter cache
+2020-03-12 16:39:42 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20047} exit cache
+2020-03-12 16:39:42 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20057} enter cache
+2020-03-12 16:41:05 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20048} exit cache
+2020-03-12 16:41:05 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20058} enter cache
+2020-03-12 16:41:05 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20049} exit cache
+2020-03-12 16:41:05 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20059} enter cache
+2020-03-12 16:41:07 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20040} exit cache
+2020-03-12 16:41:07 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20060} enter cache
+2020-03-12 16:41:07 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20041} exit cache
+2020-03-12 16:41:07 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20061} enter cache
+2020-03-12 16:41:08 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20042} exit cache
+2020-03-12 16:41:08 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20062} enter cache
+2020-03-12 16:41:08 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20043} exit cache
+2020-03-12 16:41:08 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20063} enter cache
+2020-03-12 16:41:16 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20045} exit cache
+2020-03-12 16:41:16 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20064} enter cache
+2020-03-12 16:41:16 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20051} exit cache
+2020-03-12 16:41:16 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20065} enter cache
+2020-03-12 16:42:54 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20044} exit cache
+2020-03-12 16:42:54 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20066} enter cache
+2020-03-12 16:43:25 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20050} exit cache
+2020-03-12 16:43:25 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20067} enter cache
+2020-03-12 16:43:29 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20030} exit cache
+2020-03-12 16:43:29 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20068} enter cache
+2020-03-12 16:43:44 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20031} exit cache
+2020-03-12 16:43:44 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20069} enter cache
+2020-03-12 16:51:43 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20054} exit cache
+2020-03-12 16:51:43 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20070} enter cache
+2020-03-12 16:51:50 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20055} exit cache
+2020-03-12 16:51:50 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20071} enter cache
+2020-03-12 16:52:05 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20032} exit cache
+2020-03-12 16:52:05 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20072} enter cache
+2020-03-12 16:55:00 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20033} exit cache
+2020-03-12 16:55:00 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20073} enter cache
+2020-03-12 16:55:00 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20064} exit cache
+2020-03-12 16:55:00 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20074} enter cache
+2020-03-12 16:55:41 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20065} exit cache
+2020-03-12 16:55:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20075} enter cache
+2020-03-12 16:55:41 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20069} exit cache
+2020-03-12 16:55:41 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20076} enter cache
+2020-03-12 16:56:43 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20066} exit cache
+2020-03-12 16:56:43 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20077} enter cache
+2020-03-12 16:56:43 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20067} exit cache
+2020-03-12 16:56:43 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20078} enter cache
+2020-03-12 16:56:43 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20052} exit cache
+2020-03-12 16:56:43 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20079} enter cache
+2020-03-12 16:56:43 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20053} exit cache
+2020-03-12 16:56:43 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20080} enter cache
+2020-03-12 16:56:43 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 16:56:43 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 16:56:45 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20070} exit cache
+2020-03-12 16:56:45 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20081} enter cache
+2020-03-12 16:56:45 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20071} exit cache
+2020-03-12 16:56:45 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20082} enter cache
+2020-03-12 16:58:57 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:785) DruidDataSource.java INFO {dataSource-1} inited
+2020-03-12 16:58:57 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} enter cache
+2020-03-12 16:58:57 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} enter cache
+2020-03-12 16:58:57 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} enter cache
+2020-03-12 16:58:57 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} enter cache
+2020-03-12 16:59:02 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20004} enter cache
+2020-03-12 16:59:02 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20005} enter cache
+2020-03-12 17:01:11 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20006} enter cache
+2020-03-12 17:01:11 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20007} enter cache
+2020-03-12 17:01:32 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20008} enter cache
+2020-03-12 17:01:32 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20009} enter cache
+2020-03-12 17:01:35 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20010} enter cache
+2020-03-12 17:01:35 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20011} enter cache
+2020-03-12 17:01:37 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20012} enter cache
+2020-03-12 17:02:39 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20013} enter cache
+2020-03-12 17:02:39 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20014} enter cache
+2020-03-12 17:03:39 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20015} enter cache
+2020-03-12 17:03:39 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20016} enter cache
+2020-03-12 17:04:50 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20017} enter cache
+2020-03-12 17:04:50 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20018} enter cache
+2020-03-12 17:04:53 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20019} enter cache
+2020-03-12 17:05:37 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} exit cache
+2020-03-12 17:05:37 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20020} enter cache
+2020-03-12 17:06:10 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} exit cache
+2020-03-12 17:06:10 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20021} enter cache
+2020-03-12 17:06:10 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} exit cache
+2020-03-12 17:06:10 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20022} enter cache
+2020-03-12 17:06:11 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} exit cache
+2020-03-12 17:06:11 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20023} enter cache
+2020-03-12 17:06:11 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20004} exit cache
+2020-03-12 17:06:11 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20024} enter cache
+2020-03-12 17:06:18 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20005} exit cache
+2020-03-12 17:06:18 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20025} enter cache
+2020-03-12 17:06:18 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20012} exit cache
+2020-03-12 17:06:18 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20026} enter cache
+2020-03-12 18:04:07 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20013} exit cache
+2020-03-12 18:04:07 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20027} enter cache
+2020-03-12 18:04:07 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20014} exit cache
+2020-03-12 18:04:07 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20028} enter cache
+2020-03-12 18:04:07 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20015} exit cache
+2020-03-12 18:04:07 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20029} enter cache
+2020-03-12 18:04:08 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20016} exit cache
+2020-03-12 18:04:08 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20030} enter cache
+2020-03-12 19:26:57 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20017} exit cache
+2020-03-12 19:26:57 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20031} enter cache
+2020-03-12 19:26:57 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20018} exit cache
+2020-03-12 19:26:57 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20032} enter cache
+2020-03-12 19:34:49 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20019} exit cache
+2020-03-12 19:34:49 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20033} enter cache
+2020-03-12 19:36:19 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20021} exit cache
+2020-03-12 19:36:19 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20034} enter cache
+2020-03-12 19:36:22 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20022} exit cache
+2020-03-12 19:36:22 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20035} enter cache
+2020-03-12 19:40:45 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20008} exit cache
+2020-03-12 19:40:45 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20036} enter cache
+2020-03-12 19:40:45 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20009} exit cache
+2020-03-12 19:40:45 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20037} enter cache
+2020-03-12 19:40:45 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20010} exit cache
+2020-03-12 19:40:45 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20038} enter cache
+2020-03-12 19:40:45 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 19:40:45 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 19:45:27 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20011} exit cache
+2020-03-12 19:45:27 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20039} enter cache
+2020-03-12 19:45:40 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 19:45:40 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 19:48:35 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 19:48:35 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 19:48:37 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20006} exit cache
+2020-03-12 19:48:37 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20040} enter cache
+2020-03-12 19:48:52 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 19:48:52 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 19:54:24 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 19:54:24 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 19:54:30 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20007} exit cache
+2020-03-12 19:54:30 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20041} enter cache
+2020-03-12 19:54:30 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 19:54:30 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"desc","sort":"menu_id"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 19:54:31 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20025} exit cache
+2020-03-12 19:54:31 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20042} enter cache
+2020-03-12 19:54:31 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 19:54:31 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc","sort":"menu_id"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 19:56:24 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:43) MyLogAdvice.java INFO Thu Mar 12 19:56:24 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc","sort":"menu_id"}]|com.xd.controller.MenuController.findMenu
+2020-03-12 20:11:18 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20026} exit cache
+2020-03-12 20:11:18 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20043} enter cache
+2020-03-12 20:11:18 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20023} exit cache
+2020-03-12 20:11:18 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20044} enter cache
+2020-03-12 20:11:36 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20024} exit cache
+2020-03-12 20:11:36 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20045} enter cache
+2020-03-12 20:11:36 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20020} exit cache
+2020-03-12 20:11:36 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20046} enter cache
+2020-03-12 20:26:01 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20027} exit cache
+2020-03-12 20:26:01 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20047} enter cache
+2020-03-12 20:26:01 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20028} exit cache
+2020-03-12 20:26:01 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20048} enter cache
+2020-03-12 20:28:43 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20029} exit cache
+2020-03-12 20:28:43 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20049} enter cache
+2020-03-12 20:28:47 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20033} exit cache
+2020-03-12 20:28:47 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20050} enter cache
+2020-03-12 20:28:47 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20035} exit cache
+2020-03-12 20:28:47 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20051} enter cache
+2020-03-12 20:29:03 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20034} exit cache
+2020-03-12 20:29:03 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20052} enter cache
+2020-03-12 20:29:03 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20031} exit cache
+2020-03-12 20:29:03 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20053} enter cache
+2020-03-12 20:39:54 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20032} exit cache
+2020-03-12 20:39:54 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20054} enter cache
+2020-03-12 20:43:17 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20036} exit cache
+2020-03-12 20:43:17 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20055} enter cache
+2020-03-12 20:43:17 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20030} exit cache
+2020-03-12 20:43:17 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20056} enter cache
+2020-03-12 20:46:13 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20038} exit cache
+2020-03-12 20:46:13 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20057} enter cache
+2020-03-12 20:46:13 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20041} exit cache
+2020-03-12 20:46:13 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20058} enter cache
+2020-03-12 20:50:17 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20037} exit cache
+2020-03-12 20:50:17 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20059} enter cache
+2020-03-12 20:50:17 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20042} exit cache
+2020-03-12 20:50:17 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20060} enter cache
+2020-03-12 20:56:38 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20040} exit cache
+2020-03-12 20:56:38 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20061} enter cache
+2020-03-12 20:56:38 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20039} exit cache
+2020-03-12 20:56:38 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20062} enter cache
+2020-03-12 20:59:27 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20043} exit cache
+2020-03-12 20:59:27 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20063} enter cache
+2020-03-12 21:00:54 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20044} exit cache
+2020-03-12 21:00:54 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20064} enter cache
+2020-03-12 22:02:33 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20049} exit cache
+2020-03-12 22:02:33 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20065} enter cache
+2020-03-12 22:02:33 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20050} exit cache
+2020-03-12 22:02:33 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20066} enter cache
+2020-03-13 11:20:06 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:785) DruidDataSource.java INFO {dataSource-1} inited
+2020-03-13 11:20:06 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} enter cache
+2020-03-13 11:20:06 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} enter cache
+2020-03-13 11:20:06 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} enter cache
+2020-03-13 11:20:06 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} enter cache
+2020-03-13 11:20:09 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20004} enter cache
+2020-03-13 11:20:09 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20005} enter cache
+2020-03-13 11:20:11 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20006} enter cache
+2020-03-13 11:20:11 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20007} enter cache
+2020-03-13 11:20:11 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20008} enter cache
+2020-03-13 11:20:11 com.xd.log.MyLogAdvice.myafterRet(MyLogAdvice.java:42) MyLogAdvice.java INFO Fri Mar 13 11:20:11 CST 2020|菜单列表|0:0:0:0:0:0:0:1|[{"limit":10,"offset":0,"order":"asc"}]|com.xd.controller.MenuController.findMenu
+2020-03-13 11:20:14 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20009} enter cache
+2020-03-13 11:20:14 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20010} enter cache
+2020-03-13 11:20:14 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20011} enter cache
+2020-03-13 11:20:14 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20012} enter cache
+2020-03-13 11:20:16 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20013} enter cache
+2020-03-13 11:20:16 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20014} enter cache
+2020-03-13 11:20:17 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20015} enter cache
+2020-03-13 11:20:17 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20016} enter cache
+2020-03-13 11:20:18 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20017} enter cache
+2020-03-13 11:20:18 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20018} enter cache
+2020-03-13 11:20:19 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20019} enter cache
+2020-03-13 11:20:19 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20000} exit cache
+2020-03-13 11:20:19 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20020} enter cache
+2020-03-13 11:20:19 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20001} exit cache
+2020-03-13 11:20:19 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20021} enter cache
+2020-03-13 11:20:19 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20002} exit cache
+2020-03-13 11:20:19 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20022} enter cache
+2020-03-13 11:20:20 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20004} exit cache
+2020-03-13 11:20:20 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20023} enter cache
+2020-03-13 11:20:20 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20005} exit cache
+2020-03-13 11:20:20 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20024} enter cache
+2020-03-13 11:20:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20006} exit cache
+2020-03-13 11:20:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20025} enter cache
+2020-03-13 11:20:21 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20003} exit cache
+2020-03-13 11:20:21 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20026} enter cache
+2020-03-13 11:20:23 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20007} exit cache
+2020-03-13 11:20:23 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20027} enter cache
+2020-03-13 11:20:23 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20008} exit cache
+2020-03-13 11:20:23 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20028} enter cache
+2020-03-13 11:20:24 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20009} exit cache
+2020-03-13 11:20:24 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20029} enter cache
+2020-03-13 11:20:24 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20010} exit cache
+2020-03-13 11:20:24 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20030} enter cache
+2020-03-13 11:20:26 com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:152) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20011} exit cache
+2020-03-13 11:20:26 com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:121) PreparedStatementPool.java DEBUG {conn-10005, pstmt-20031} enter cache
